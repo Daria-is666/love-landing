@@ -4,7 +4,7 @@ const yesBtn = document.getElementById('yesBtn');
 /* 😈 КНОПКА "НЕТ" — ПАРАНОИДАЛЬНАЯ */
 if (noBtn) {
   const messages = [
-    'РЕАЛЬНО? Клянись!',
+    'РЕАЛЬНО?',
     'Ты что такое удумал?',
     'Ну мы же оба знаем правду',
     'Ха-ха, лох цветочный',
@@ -14,14 +14,14 @@ if (noBtn) {
     'Хватит баловаться!',
     'Не догонишь, не догонишь',
     'Всё ещё тут?',
-    'Ты совершаешь большую ошибку - подумой!'
+    'Но-но-но, мистер Фиш'
   ];
 
   noBtn.addEventListener('mouseenter', () => {
     const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
     const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
 
-    noBtn.style.transition = 'all 0.8s ease-out'; // плавное движение
+    noBtn.style.transition = 'all 0.9s ease-out'; // плавное движение
     noBtn.style.position = 'fixed';
     noBtn.style.left = `${x}px`;
     noBtn.style.top = `${y}px`;
@@ -39,7 +39,7 @@ if (yesBtn) {
     e.preventDefault();
 
     // Генерация сердечек
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 40; i++) {
       createHeart();
     }
 
@@ -60,14 +60,20 @@ function createHeart() {
   heart.className = 'heart';
   heart.innerHTML = '❤️';
 
-  heart.style.left = Math.random() * window.innerWidth + 'px';
-  heart.style.bottom = '-20px';
-  heart.style.fontSize = 16 + Math.random() * 24 + 'px';
-  heart.style.animationDuration = 2 + Math.random() * 2 + 's';
+  // Позиционируем сердечки в верхней части экрана
+  const startX = Math.random() * window.innerWidth;
+  const startSize = 16 + Math.random() * 24;
+
+  heart.style.left = startX + 'px';
+  heart.style.fontSize = startSize + 'px';
+  
+  // Добавляем плавное падение с верхней части экрана
+  heart.style.animationDuration = 3 + Math.random() * 2 + 's';
 
   document.body.appendChild(heart);
 
+  // Удаляем сердечко через 5 секунд
   setTimeout(() => {
     heart.remove();
-  }, 4000);
+  }, 5000);
 }
