@@ -21,7 +21,7 @@ if (noBtn) {
     const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
     const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
 
-    noBtn.style.transition = 'all 0.6s ease-out'; // плавное движение
+    noBtn.style.transition = 'all 0.8s ease-out'; // плавное движение
     noBtn.style.position = 'fixed';
     noBtn.style.left = `${x}px`;
     noBtn.style.top = `${y}px`;
@@ -39,7 +39,7 @@ if (yesBtn) {
     e.preventDefault();
 
     // Генерация сердечек
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 100; i++) {
       createHeart();
     }
 
