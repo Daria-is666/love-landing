@@ -6,7 +6,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-   background-color: #121212; /* Очень тёмный фон */
+  background-color: #121212; /* Очень тёмный фон */
   color: #fff; /* Белый цвет текста */
   display: flex;
   align-items: center;
@@ -46,7 +46,7 @@ h1 {
 .btn:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  background-color: #555; /* При наведении кнопка становится светлее */
+  background-color: #ff66b2; /* При наведении кнопка становится светлее */
   border-color: #777;
 }
 
