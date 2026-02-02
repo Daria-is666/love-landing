@@ -1,7 +1,38 @@
+
 const noBtn = document.getElementById('noBtn');
 const yesBtn = document.getElementById('yesBtn');
 
+// Проверим, на какой странице мы находимся
+if (window.location.pathname.includes("yes.html")) {
+  // Если мы на второй странице (yes.html), генерируем сердечки
+  for (let i = 0; i < 40; i++) {
+    createHeart();
+  }
 
+  // Функция для создания сердечек
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerHTML = '❤️';
+
+    // Позиционируем сердечки в верхней части экрана
+    const startX = Math.random() * window.innerWidth;
+    const startSize = 16 + Math.random() * 24;
+
+    heart.style.left = startX + 'px';
+    heart.style.fontSize = startSize + 'px';
+    
+    // Добавляем плавное падение с верхней части экрана
+    heart.style.animationDuration = 3 + Math.random() * 2 + 's';
+
+    document.body.appendChild(heart);
+
+    // Удаляем сердечко через 5 секунд
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+}
 
 // Логика для кнопки "Нет" на первой странице (index.html)
 if (noBtn) {
@@ -41,7 +72,7 @@ if (yesBtn) {
     // Добавляем надпись "Я так и знал"
     const knownMessage = document.createElement('div');
     knownMessage.className = 'known-message';
-    knownMessage.textContent = 'Я так и знала! ❤️';
+    knownMessage.textContent = 'Я так и знал! ❤️';
     document.body.appendChild(knownMessage);
 
     setTimeout(() => {
@@ -49,36 +80,3 @@ if (yesBtn) {
     }, 900);
   });
 }
-    // Проверим, на какой странице мы находимся
-if (window.location.pathname.includes("yes.html")) {
-  // Если мы на второй странице (yes.html), генерируем сердечки
-  for (let i = 0; i < 40; i++) {
-    createHeart();
-  }
-
-  // Функция для создания сердечек
-  function createHeart() {
-    const heart = document.createElement('div');
-    heart.className = 'heart';
-    heart.innerHTML = '❤️';
-
-    // Позиционируем сердечки в верхней части экрана
-    const startX = Math.random() * window.innerWidth;
-    const startSize = 16 + Math.random() * 24;
-
-    heart.style.left = startX + 'px';
-    heart.style.fontSize = startSize + 'px';
-    
-    // Добавляем плавное падение с верхней части экрана
-    heart.style.animationDuration = 3 + Math.random() * 2 + 's';
-
-    document.body.appendChild(heart);
-
-    // Удаляем сердечко через 5 секунд
-    setTimeout(() => {
-      heart.remove();
-    }, 5000);
-  }
-}
-
-
