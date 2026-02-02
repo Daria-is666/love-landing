@@ -47,7 +47,8 @@ if (yesBtn) {
     setTimeout(() => {
       window.location.href = 'yes.html';
     }, 900);
-    
+  });
+}
     // Проверим, на какой странице мы находимся
 if (window.location.pathname.includes("yes.html")) {
   // Если мы на второй странице (yes.html), генерируем сердечки
@@ -80,6 +81,4 @@ if (window.location.pathname.includes("yes.html")) {
   }
 }
 
-  });
-}
 
