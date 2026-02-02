@@ -4,17 +4,24 @@ const yesBtn = document.getElementById('yesBtn');
 /* 😈 КНОПКА "НЕТ" — ПАРАНОИДАЛЬНАЯ */
 if (noBtn) {
   const messages = [
-    'Не сегодня 😜',
-    'Почти поймал!',
-    'Ха-ха, нет 😈',
+    'РЕАЛЬНО? Клянись!',
+    'Ты что такое удумал?',
+    'Ну мы же оба знаем правду',
+    'Ха-ха, лох цветочный',
     'Мимо!',
-    'Да ладно тебе ❤️'
+    'Всё ещё мимо!',
+    'Да ладно тебе, сдавайся!', 
+    'Хватит баловаться!',
+    'Не догонишь, не догонишь',
+    'Всё ещё тут?',
+    'Ты совершаешь большую ошибку - подумой!'
   ];
 
   noBtn.addEventListener('mouseenter', () => {
     const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
     const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
 
+    noBtn.style.transition = 'all 0.3s ease-out'; // плавное движение
     noBtn.style.position = 'fixed';
     noBtn.style.left = `${x}px`;
     noBtn.style.top = `${y}px`;
@@ -26,14 +33,21 @@ if (noBtn) {
   });
 }
 
-/* 💥 СЕРДЕЧКИ ПРИ НАЖАТИИ "ДА" */
+/* 💥 СЕРДЕЧКИ И "Я ТАК И ЗНАЛ" ПРИ НАЖАТИИ "ДА" */
 if (yesBtn) {
   yesBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
+    // Генерация сердечек
     for (let i = 0; i < 40; i++) {
       createHeart();
     }
+
+    // Добавляем надпись "Я так и знал"
+    const knownMessage = document.createElement('div');
+    knownMessage.className = 'known-message';
+    knownMessage.textContent = 'Я так и знала! ❤️';
+    document.body.appendChild(knownMessage);
 
     setTimeout(() => {
       window.location.href = 'yes.html';
