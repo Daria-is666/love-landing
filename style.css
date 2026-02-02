@@ -108,3 +108,36 @@ h1 {
   }
 }
 
+/* 💬 ТЕКСТ "Я ТАК И ЗНАЛ" */
+.known-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  color: #fff;
+  font-weight: bold;
+  animation: appear 1s ease-in-out;
+  z-index: 9999;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+/* 😈 ПЛАВНАЯ АНИМАЦИЯ ДЛЯ КНОПКИ "НЕТ" */
+.no {
+  transition: all 0.3s ease-out; /* плавное движение */
+}
+
