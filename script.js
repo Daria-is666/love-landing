@@ -32,11 +32,6 @@ if (window.location.pathname.includes("yes.html")) {
     heart.style.animationName = 'moveHeart';
 
     document.body.appendChild(heart);
-
-    // Удаляем сердечко через 8 секунд
-    setTimeout(() => {
-      heart.remove();
-    }, 8000);
   }
 }
 
