@@ -77,7 +77,7 @@ h1 {
 
 /* 😈 ТРЯСКА КНОПКИ */
 .shake {
-  animation: shake 0.8s;
+  animation: shake 0.3s;
 }
 
 @keyframes shake {
