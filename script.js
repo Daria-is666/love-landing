@@ -23,7 +23,7 @@ if (window.location.pathname.includes("yes.html")) {
     heart.style.fontSize = startSize + 'px';
     
     // Добавляем плавное падение с верхней части экрана
-    heart.style.animationDuration = 5 + Math.random() * 3 + 's'; // медленное падение
+    heart.style.animationDuration = 5 + Math.random() * 5 + 's'; // медленное падение
 
     document.body.appendChild(heart);
 
