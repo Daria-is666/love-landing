@@ -77,7 +77,7 @@ h1 {
 
 /* 😈 ТРЯСКА КНОПКИ */
 .shake {
-  animation: shake 0.3s;
+  animation: shake 0.8s;
 }
 
 @keyframes shake {
@@ -88,22 +88,27 @@ h1 {
   100% { transform: translateX(0); }
 }
 
-/* ❤️ СЕРДЕЧКИ */
+/* ❤️ СЕРДЕЧКИ — ПАДАЮТ С ВЕРХУ */
 .heart {
   position: fixed;
   color: red;
   pointer-events: none;
-  animation-name: floatUp;
+  animation-name: fallDown;
   animation-timing-function: ease-out;
+  opacity: 0;
 }
 
-@keyframes floatUp {
+@keyframes fallDown {
   0% {
-    transform: translateY(0) scale(1);
+    transform: translateY(-100px) scale(1);
     opacity: 1;
   }
+  60% {
+    transform: translateY(50vh) scale(1.2);
+    opacity: 0.8;
+  }
   100% {
-    transform: translateY(-120vh) scale(1.5);
+    transform: translateY(100vh) scale(1.5);
     opacity: 0;
   }
 }
@@ -111,7 +116,7 @@ h1 {
 /* 💬 ТЕКСТ "Я ТАК И ЗНАЛ" */
 .known-message {
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 36px;
@@ -138,6 +143,5 @@ h1 {
 
 /* 😈 ПЛАВНАЯ АНИМАЦИЯ ДЛЯ КНОПКИ "НЕТ" */
 .no {
-  transition: all 0.3s ease-out; /* плавное движение */
+  transition: all 0.8s ease-out; /* плавное движение */
 }
-
