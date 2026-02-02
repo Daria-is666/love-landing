@@ -14,16 +14,22 @@ if (window.location.pathname.includes("yes.html")) {
     const heart = document.createElement('div');
     heart.className = 'heart';
     heart.innerHTML = '❤️';
-
-    // Позиционируем сердечки в верхней части экрана
+    
+    // Позиционируем сердечко в случайной позиции
     const startX = Math.random() * window.innerWidth;
+    const startY = Math.random() * window.innerHeight;
     const startSize = 16 + Math.random() * 24;
 
     heart.style.left = startX + 'px';
+    heart.style.top = startY + 'px';
     heart.style.fontSize = startSize + 'px';
-    
-    // Добавляем плавное падение с верхней части экрана
-    heart.style.animationDuration = 5 + Math.random() * 5 + 's'; // медленное падение
+
+    // Добавляем плавное хаотичное движение сердечек
+    heart.style.animationDuration = 3 + Math.random() * 5 + 's'; // продолжительность анимации
+    heart.style.animationDelay = Math.random() * 5 + 's'; // случайная задержка для каждого сердечка
+
+    // Случайные направления и скорости для движения
+    heart.style.animationName = 'moveHeart';
 
     document.body.appendChild(heart);
 
