@@ -51,7 +51,8 @@ if (window.location.pathname.includes("yes.html")) {
   // Если мы на второй странице (yes.html), генерируем сердечки
   for (let i = 0; i < 40; i++) {
     createHeart();
-  }
+   });
+}
 
 // Функция для создания сердечек
 function createHeart() {
