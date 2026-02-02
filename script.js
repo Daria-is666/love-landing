@@ -21,7 +21,7 @@ if (noBtn) {
     const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
     const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
 
-    noBtn.style.transition = 'all 0.9s ease-out'; // плавное движение
+    noBtn.style.transition = 'all 0.4s ease-out'; // плавное движение
     noBtn.style.position = 'fixed';
     noBtn.style.left = `${x}px`;
     noBtn.style.top = `${y}px`;
