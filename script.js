@@ -21,7 +21,7 @@ if (noBtn) {
     const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
     const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
 
-    noBtn.style.transition = 'all 0.4s ease-out'; // плавное движение
+    noBtn.style.transition = 'all 0.5s ease-out'; // плавное движение
     noBtn.style.position = 'fixed';
     noBtn.style.left = `${x}px`;
     noBtn.style.top = `${y}px`;
@@ -38,7 +38,7 @@ if (yesBtn) {
   yesBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
-    // Генерация сердечек
+    // Генерация сердечек на второй странице
     for (let i = 0; i < 40; i++) {
       createHeart();
     }
@@ -55,6 +55,7 @@ if (yesBtn) {
   });
 }
 
+// Функция для создания сердечек
 function createHeart() {
   const heart = document.createElement('div');
   heart.className = 'heart';
