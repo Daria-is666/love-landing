@@ -9,7 +9,7 @@ if (window.location.pathname.includes("yes.html")) {
     createHeart();
   }
 
-  // Функция для создания сердечек
+ // Функция для создания сердечек
   function createHeart() {
     const heart = document.createElement('div');
     heart.className = 'heart';
@@ -23,14 +23,14 @@ if (window.location.pathname.includes("yes.html")) {
     heart.style.fontSize = startSize + 'px';
     
     // Добавляем плавное падение с верхней части экрана
-    heart.style.animationDuration = 3 + Math.random() * 2 + 's';
+    heart.style.animationDuration = 5 + Math.random() * 3 + 's'; // медленное падение
 
     document.body.appendChild(heart);
 
-    // Удаляем сердечко через 5 секунд
+    // Удаляем сердечко через 8 секунд
     setTimeout(() => {
       heart.remove();
-    }, 5000);
+    }, 8000);
   }
 }
 
@@ -72,7 +72,7 @@ if (yesBtn) {
     // Добавляем надпись "Я так и знал"
     const knownMessage = document.createElement('div');
     knownMessage.className = 'known-message';
-    knownMessage.textContent = 'Я так и знал! ❤️';
+    knownMessage.textContent = 'Бинго! ❤️';
     document.body.appendChild(knownMessage);
 
     setTimeout(() => {
